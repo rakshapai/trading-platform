@@ -47,6 +47,11 @@ if not filtered_stocks:
     exit()
 
 # === Step 6: Use Q-Learning to Choose Stocks to Buy ===
+
+# Q-Learning Parameters
+q_learning.alpha = 0.1
+q_learning.gamma = 0.6
+q_learning.epsilon = 0.1
 best_stock, invest_amount = q_learning.q_learning_stock_selection(filtered_stocks, int(trade_budget))
 
 print(f"\nRecommended Stock to Buy: {best_stock['symbol']}")
